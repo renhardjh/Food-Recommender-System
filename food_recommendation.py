@@ -279,7 +279,7 @@ count = len(attributes)
 attr_df = pd.DataFrame({'food_description':attributes})
 attr_df
 
-"""### Bandingkan attribute dari user_food dengan hasil rekomendasi untuk menentukan kriteria confusion matrix
+"""### Bandingkan attribute dari user_food dengan hasil rekomendasi untuk menentukan kriteria
 - True Positive (TP): Item yang benar-benar disukai dan direkomendasikan dengan benar.
 - False Positive (FP): Item yang tidak disukai tetapi direkomendasikan.
 - True Negative (TN): Item yang tidak disukai dan tidak direkomendasikan.
@@ -292,12 +292,17 @@ Kita lihat minimal dari **2 attribut awal** yaitu **Healthy Food, nonveg**, dll
 
 Dari Hasil 5 rekomendasi, terdapat 4 data yang sesuai dan 1 data yang tidak sesuai yaitu makanan 'carrot ginger soup' dengan atribut **Healthy Food, veg**, ...
 
-Dengan begitu hasilnya adalah **['TP0', 'TP1', 'TP2', 'FP3', 'TP4']**
+Setelah itu hasilnya kita masukan pada fitur baru actual_item
 """
 
 # Buat kolom baru 'outcome' untuk menampung nilai hasil Cosine similiarity
 conf_matrix_cosine_sim = cosine_sim_recommend
-conf_matrix_cosine_sim['outcome'] = ['TP0', 'TP1', 'TP2', 'FP3', 'TP4']
+conf_matrix_cosine_sim['actual_item'] = [
+    'chicken minced salad',
+    'roasted spring chicken with root veggies',
+    'microwave chicken steak',
+    'half roast chicken',
+    'fish andlouse']
 conf_matrix_cosine_sim
 
 """**- Pembuktian hasil rekomendasi Jaccard similiarity**
@@ -307,12 +312,17 @@ Kita lihat minimal dari **2 attribut awal** yaitu **Healthy Food, nonveg**, dll
 
 Dari Hasil 5 rekomendasi, terdapat 3 data yang sesuai dan 2 data yang tidak sesuai yaitu makanan 'carrot ginger soup' dan 'fish andlouse' yang mempunyai atribut **Healthy Food, veg**, ...
 
-Dengan begitu hasilnya adalah **['TP0', 'TP1', 'TP2', 'FP3', 'FP4']**
+Setelah itu hasilnya kita masukan pada fitur baru actual_item
 """
 
 # Buat kolom baru 'outcome' untuk menampung nilai hasil Jaccard similiarity
 conf_matrix_jaccard_sim = jaccard_recommend
-conf_matrix_jaccard_sim['outcome'] = ['TP0', 'TP1', 'TP2', 'FP3', 'FP4']
+conf_matrix_jaccard_sim['actual_item'] = [
+    'roasted spring chicken with root veggies',
+    'chicken minced salad',
+    'microwave chicken steak',
+    'half roast chicken',
+    'fish andlouse']
 conf_matrix_jaccard_sim
 
 """### Menilai performa indikator menggunakan Precision, Recall dan F1 Score"""
@@ -356,23 +366,24 @@ def f1_score(actual_items, recommended_items):
 
     return f1
 
-actual_items = ['TP0', 'TP1', 'TP2', 'TP3', 'TP4']
-cosine_recommend_items = conf_matrix_cosine_sim['outcome'].to_numpy()
-jaccard_recommend_items = conf_matrix_jaccard_sim['outcome'].to_numpy()
+actual_items_cosine = conf_matrix_cosine_sim['actual_item'].to_numpy()
+actual_items_jaccard = conf_matrix_jaccard_sim['actual_item'].to_numpy()
+cosine_recommend_items = conf_matrix_cosine_sim['food_name'].to_numpy()
+jaccard_recommend_items = conf_matrix_jaccard_sim['food_name'].to_numpy()
 
 eval_df = pd.DataFrame(columns=['Cosine Similiarity', 'Jaccard Similiarity'], index=['Precision','Recall','F1-score'])
 
 # Dictionary untuk setiap hasil evaluasi
 cosine_dict = {
-    'Precision': precision(actual_items, cosine_recommend_items),
-    'Recall': recall(actual_items, cosine_recommend_items),
-    'F1-score': f1_score(actual_items, cosine_recommend_items)
+    'Precision': precision(actual_items_cosine, cosine_recommend_items),
+    'Recall': recall(actual_items_cosine, cosine_recommend_items),
+    'F1-score': f1_score(actual_items_cosine, cosine_recommend_items)
     }
 
 jaccard_dict = {
-    'Precision': precision(actual_items, jaccard_recommend_items),
-    'Recall': recall(actual_items, jaccard_recommend_items),
-    'F1-score': f1_score(actual_items, jaccard_recommend_items)
+    'Precision': precision(actual_items_jaccard, jaccard_recommend_items),
+    'Recall': recall(actual_items_jaccard, jaccard_recommend_items),
+    'F1-score': f1_score(actual_items_jaccard, jaccard_recommend_items)
     }
 
 # Kalkulasi precision, recall, dan f1-score pada setiap metode similiarity
