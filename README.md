@@ -188,4 +188,99 @@ Tabel 6. Dataframe Mixed Fitur
 |8|9\.0|cream of almond soup|Healthy Food veg vegetable stock skimmed milk toasted almonds powdered butter flour salt and pepper nutmeg almond essence toasted almond flakes|
 |9|10\.0|broccoli and almond soup|Healthy Food veg vegetable stock broccoli ground almonds toasted skimmed milk salt freshly ground black pepper|
 
+## Pengembangan Model
 
+Setelah data selesai dipersiapkan, sudah bersih dan hanya berisi fitur-fitur yang relevan saja, sekarang saatnya membuat model sistem rekomendasi makanan menggunakan pendekatan _content based filtering_. Pertama mulai dari melakukan pemrosesan teks yang digunakan pada sistem rekomendasi untuk menemukan representasi fitur penting dari setiap kategori makanan. Dalam kasus ini, pemrosesan teks menggunakan CountVectorizer yang merupakan salah satu teknik dalam pemrosesan teks yang digunakan untuk mengubah teks menjadi representasi numerik berdasarkan frekuensi kemunculan kata-kata. Dalam konteks model sistem rekomendasi makanan, CountVectorizer digunakan untuk mengubah deskripsi makanan atau kata-kata terkait menjadi fitur numerik yang dapat digunakan dalam pemodelan machine learning. Kemudian untuk menghitung kesamaan dari konten setiap kategori makanan dalam sistem ini akan menggunakan cosine similiarity dan jaccard similiarity. Lalu kita akan bandingkan performa dan hasil dari kedua model tersebut untuk menemukan mana yang lebih baik.
+
+### Tokenisasi
+
+CountVectorizer menghitung frekuensi kemunculan setiap kata dalam teks dan menghasilkan vektor numerik berdasarkan frekuensi tersebut. Setiap kata dalam teks akan menjadi fitur dalam vektor, dan nilai dalam vektor tersebut menunjukkan berapa kali kata tersebut muncul dalam teks. CountVectorizer memungkinkan kita untuk mengubah teks menjadi representasi numerik yang dapat digunakan oleh algoritma machine learning untuk melatih model rekomendasi. Alasannya sistem ini menggunakan CountVectorizer karena kemudahan implementasi dan interpretasi hasilnya. CountVectorizer hanya berfokus pada frekuensi kemunculan kata dalam teks tanpa memperhitungkan bobot kata tersebut. Dalam konteks sistem rekomendasi makanan, frekuensi kemunculan kata dapat memberikan informasi penting tentang preferensi pengguna terhadap jenis makanan atau bahan-bahan tertentu.
+
+Berikut langkah-langkah mengimplementasi CountVectorizer:
+
+1. Menginisialisasi CountVectorizer dengan parameter stop_words='english' dan ngram_range=(1, 3). 
+   - stop_words='english' digunakan untuk menghapus kata-kata umum dalam bahasa Inggris, seperti "the", "and", "is", dsb.
+   - ngram_range=(1, 3) menunjukkan bahwa kita ingin mempertimbangkan unigram, bigram, dan trigram dalam teks. Misalnya, "chicken", "fried chicken", "spicy fried chicken".
+
+2. Menggunakan metode fit_transform pada CountVectorizer untuk melakukan proses fitting dan transformasi teks ke dalam bentuk matriks fitur. Data yang digunakan adalah kolom 'food_description' dari dataframe final_food.
+
+3. Menggunakan metode get_feature_names_out() pada CountVectorizer untuk mendapatkan daftar fitur (kata-kata) yang terkait dengan matriks fitur.
+   - cv.get_feature_names_out() akan mengembalikan array yang berisi daftar fitur (kata-kata) yang dihasilkan oleh CountVectorizer. Setiap elemen dalam array ini mewakili satu fitur (kata) dalam teks.
+
+Hasil CountVectorizer tersebut berupa matriks fitur yang merepresentasikan teks (deskripsi makanan) dalam bentuk numerik berisi matriks dengan dimensi (309, 11083). Setiap kolom dalam matriks fitur menunjukkan frekuensi kemunculan kata-kata dalam teks, sesuai dengan konfigurasi CountVectorizer yang telah ditentukan.
+
+### Cosine Similiarity
+
+Cosine similarity merupakan sebuah metode yang digunakan untuk mengukur kesamaan antara dua vektor dalam ruang berdimensi banyak. Metode ini menghitung kosinus sudut antara dua vektor, dan hasilnya adalah nilai antara 0 hingga 1. Semakin tinggi nilai cosine similarity, semakin mirip atau serupa dua vektor tersebut. Dalam konteks sistem rekomendasi makanan, cosine similarity digunakan untuk mengukur kesamaan konten antara dua atau lebih makanan berdasarkan fitur-fitur yang dimiliki oleh makanan tersebut. Fitur-fitur ini dapat berupa kata-kata atau atribut lain yang dianggap relevan, seperti bahan-bahan, jenis masakan, atau deskripsi makanan.
+
+Berikut langkah-langkah implementasinya dalam sistem ini:
+
+1. Mengimport fungsi cosine_similarity dari sklearn.metrics.pairwise. Fungsi ini digunakan untuk menghitung kesamaan kosinus antara dua matriks atau vektor.
+
+2. Menggunakan cosine_similarity dengan parameter cv_matrix, cv_matrix. 
+   - cv_matrix adalah matriks fitur yang dihasilkan oleh CountVectorizer pada langkah sebelumnya. Matriks ini berisi representasi numerik dari deskripsi makanan.
+   - cv_matrix, cv_matrix berarti kita menghitung kesamaan kosinus antara setiap baris pada cv_matrix dengan setiap baris lainnya. Dalam konteks ini, kita sedang mencari kesamaan antara deskripsi makanan satu dengan yang lain.
+
+3. Hasil dari cosine_similarity adalah matriks similiaritas kosinus, di mana setiap elemen menunjukkan tingkat kesamaan antara dua deskripsi makanan berdasarkan representasi numeriknya. Semakin tinggi nilai similiaritas kosinus, semakin mirip atau serupa dua deskripsi makanan tersebut.
+
+Hasil dari model tersebut berupa matriks similiaritas kosinus yang dapat digunakan dalam sistem rekomendasi makanan untuk mencari makanan yang memiliki kesamaan konten dengan makanan lainnya berdasarkan deskripsinya.
+
+### Jaccard Similiarity
+
+Jaccard similarity merupakan sebuah metode yang digunakan untuk mengukur kesamaan antara dua set atau himpunan data. Metode ini menghitung persentase kesamaan antara elemen-elemen yang ada di dalam dua himpunan, dibandingkan dengan jumlah total elemen yang unik dari kedua himpunan tersebut. Pendekatan ini didefinisikan sebagai rasio dari ukuran irisan (intersection) antara dua himpunan terhadap ukuran gabungan (union) dari kedua himpunan tersebut. Pendekatan ini menghasilkan nilai antara 0 hingga 1. Nilai 0 menunjukkan ketidakserupaan total antara kedua himpunan, sedangkan nilai 1 menunjukkan kesamaan sempurna antara kedua himpunan. Dalam konteks sistem rekomendasi makanan ini, Pendekatan ini digunakan untuk mengukur kesamaan antara dua makanan berdasarkan fitur-fitur yang dimiliki, seperti bahan-bahan, kategori makanan, atau sifat-sifat tertentu. Semakin tinggi nilai Jaccard similarity antara dua makanan, semakin mirip atau serupa makanan-makanan tersebut dalam hal fitur-fitur yang dimiliki.
+
+Berikut langkah-langkah dalam menghitung kesamaan Jaccard similarity dalam sistem ini:
+
+1. Mengubah matriks sparse yang diperoleh dari CountVectorizer ke dalam bentuk array menggunakan metode `.toarray()`. Hal ini dilakukan agar dapat menggunakan metode pairwise_distances.
+2. Menggunakan fungsi `pairwise_distances` dari library `sklearn.metrics` dengan parameter `metric="jaccard"`. Fungsi ini akan menghitung jarak pairwise antara vektor-vektor dalam array menggunakan metode Jaccard.
+3. Nilai jarak yang diperoleh dari pairwise_distances akan dikonversi menjadi Jaccard similarity dengan melakukan operasi 1 dikurangi dengan nilai jarak. Hal ini karena nilai jarak Jaccard adalah komplementer dari Jaccard similarity.
+
+Hasil dari model tersebut berupa matriks di mana setiap elemen matriks menunjukkan tingkat kesamaan antara dua makanan berdasarkan fitur-fitur yang dimiliki. Nilai Jaccard similarity berkisar antara 0 hingga 1, di mana nilai 1 menunjukkan kesamaan sempurna antara dua makanan dalam hal fitur-fitur yang dimiliki, sedangkan nilai 0 menunjukkan ketidakserupaan total antara dua makanan.
+
+### Mendapatkan Rekomendasi
+
+Selanjutnya buat sebuah fungsi untuk mendapatkan rekomendasi makanan berdasarkan nama makanan yang diberikan dan matriks kesamaan antar makanan yang telah dihitung sebelumnya menggunakan model _cosine similarity_ dan _Jaccard similarity_.
+
+Berikut langkah-langkah implementasinya:
+
+1. `indices = pd.Series(final_food.index, index=final_food['food_name'])`: Membuat objek `Series` dengan menggunakan `food_name` sebagai indeks dan `index` dari `final_food` sebagai nilai. Hal ini dilakukan untuk memudahkan pencarian indeks berdasarkan nama makanan.
+
+2. `def get_recommendations(name, method_sim)`: Membuat fungsi `get_recommendations` yang menerima dua parameter, yaitu `name` yang merupakan nama makanan yang ingin direkomendasikan, dan `method_sim` yang merupakan matriks kesamaan (similarity matrix) antar makanan berdasarkan metode tertentu.
+
+3. `food_index = indices[name]`: Menggunakan objek `indices` untuk mencari indeks makanan berdasarkan nama makanan yang diberikan sebagai input.
+
+4. `sim_weight = list(enumerate(method_sim[food_index]))`: Mengambil baris matriks kesamaan (similarity matrix) yang berkaitan dengan makanan yang dipilih, lalu mengubahnya menjadi daftar yang terdiri dari pasangan indeks makanan dan bobot kesamaan.
+
+5. `sim_weight = sorted(sim_weight, key=lambda x: x[1], reverse=True)`: Mengurutkan daftar bobot kesamaan secara menurun, sehingga makanan dengan kesamaan tertinggi akan muncul di bagian atas.
+
+6. `sim_weight = sim_weight[1:6]`: Memotong daftar bobot kesamaan sehingga hanya menyisakan top 5 makanan teratas dengan kesamaan tertinggi (kecuali makanan itu sendiri).
+
+7. `food_indices = [i[0] for i in sim_weight]`: Mengumpulkan indeks makanan dari daftar bobot kesamaan yang telah dipotong sebelumnya.
+
+8. `return final_food.iloc[food_indices]`: Mengembalikan dataframe `final_food` yang berisi rekomendasi makanan berdasarkan indeks makanan yang telah dikumpulkan sebelumnya.
+
+Setelah membuat fungsi untuk mendapatkan rekomendasinya, panggil fungsi tersebut dengan input nama makanan dan modelnya satu persatu. Mari kita coba untuk mendapatkan preferensi rekomendasi dari makanan _roast turkey with cranberry sauce_ Berikut hasilnya:
+
+Tabel 7. Hasil top 5 rekomendasi mengngunakan model cosine similiarity
+
+|index|id|food\_name|food\_description|
+|---|---|---|---|
+|1|2\.0|chicken minced salad|Healthy Food nonveg olive oil chicken mince garlic minced onion salt black pepper carrot cabbage green onions sweet chilli sauce peanut butter ginger soy sauce fresh cilantro red pepper flakes crushed tarts|
+|86|87\.0|roasted spring chicken with root veggies|Healthy Food nonveg whole chicken thyme garlic lemon orange salt black pepper butter to rub extra olive oil carrot turnip beetroot chipotle powder parsley|
+|246|247\.0|microwave chicken steak|Healthy Food nonveg chicken breasts boneless eggs slightly whisked ginger paste garlic paste onions coriander leaves green chillies black pepper powder flour vinegar salt oil|
+|70|71\.0|carrot ginger soup|Healthy Food veg Carrots Olive Oil Salt Vegetable Stock Ginger Thyme Onion Garlic Buds Pepper Freshly Picked|
+|150|151\.0|fish andlouse|French nonveg white wine and water mix to cover onion salt bay leaf black pepper corns olive oil onion garlic tomatoes peeled and seeded basil leaves spring fresh thyme  optional 1 bay leaf salt and pepper olive oil wine vinegar prepared mustard salt and pepper assorted garden herbs  parsley basil etc|
+
+Dari hasil output yang kita lihat, bisa dikatakan model dengan _cosine similiarity_ sistem sudah berhasil memberikan rekomendasi yang sesuai secara keseluruhan. Hal ini bisa dilihat dari kolom `food_description` ada beberapa kesamaan.
+
+Tabel 8. Hasil top 5 rekomendasi mengngunakan model jaccard similiarity
+
+|index|id|food\_name|food\_description|outcome|
+|---|---|---|---|---|
+|86|87\.0|roasted spring chicken with root veggies|Healthy Food nonveg whole chicken thyme garlic lemon orange salt black pepper butter to rub extra olive oil carrot turnip beetroot chipotle powder parsley|TP0|
+|1|2\.0|chicken minced salad|Healthy Food nonveg olive oil chicken mince garlic minced onion salt black pepper carrot cabbage green onions sweet chilli sauce peanut butter ginger soy sauce fresh cilantro red pepper flakes crushed tarts|TP1|
+|246|247\.0|microwave chicken steak|Healthy Food nonveg chicken breasts boneless eggs slightly whisked ginger paste garlic paste onions coriander leaves green chillies black pepper powder flour vinegar salt oil|TP2|
+|70|71\.0|carrot ginger soup|Healthy Food veg Carrots Olive Oil Salt Vegetable Stock Ginger Thyme Onion Garlic Buds Pepper Freshly Picked|FP3|
+|69|70\.0|shepherds salad \(tamatar-kheera salaad\)|Healthy Food veg 1 cucumber peeled and chopped onion tomato green chillies garlic buds pasarley olive oil lemon juice salt and pepper|FP4|
+
+Dari hasil output yang kita lihat, bisa dikatakan model dengan _jaccard similiarity_ sistem sudah berhasil memberikan rekomendasi yang sesuai secara keseluruhan. Hal ini bisa dilihat dari kolom `food_description` ada beberapa kesamaan. Hasil rekomendasi dari kedua model menunjukan data yang sesuai memiliki beberapa kesamaan yang sesuai, namun manakah model yang lebih _cosine similiarity_ atau _jaccard similiarity_. Untuk membuktikannya mari kita lakukan evaluasi pada langkah selanjutnya.
