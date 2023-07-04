@@ -284,3 +284,75 @@ Tabel 8. Hasil top 5 rekomendasi mengngunakan model jaccard similiarity
 |69|70\.0|shepherds salad \(tamatar-kheera salaad\)|Healthy Food veg 1 cucumber peeled and chopped onion tomato green chillies garlic buds pasarley olive oil lemon juice salt and pepper|FP4|
 
 Dari hasil output yang kita lihat, bisa dikatakan model dengan _jaccard similiarity_ sistem sudah berhasil memberikan rekomendasi yang sesuai secara keseluruhan. Hal ini bisa dilihat dari kolom `food_description` ada beberapa kesamaan. Hasil rekomendasi dari kedua model menunjukan data yang sesuai memiliki beberapa kesamaan yang sesuai, namun manakah model yang lebih _cosine similiarity_ atau _jaccard similiarity_. Untuk membuktikannya mari kita lakukan evaluasi pada langkah selanjutnya.
+
+## Evaluasi Model
+
+Evaluasi model sangat penting setelah pembuatan model karena memberikan pemahaman tentang seberapa baik model bekerja dalam memenuhi tujuan yang ditetapkan. Evaluasi model membantu dalam mengukur kinerja dan kualitas model serta memberikan wawasan tentang seberapa akurat dan dapat diandalkan model dalam menghasilkan prediksi atau rekomendasi. Setelah kita selesai membuat model dengan _cosine similiarity_ dan _jaccard similiarity_, perlu melakukan evaluasi terhadap model-model tesebut untuk mengetahui seberapa akurat dan seberapa presisi predikisi atau rekomendasi yang dihasilkan. Untuk mengevaluasi model, kita akan menggunakan _precision_, _recall_ dan _F1 score_, evaluasi model menggunakan ketiga metrik tersebut merupakan cara yang umum digunakan dalam sistem klasifikasi dan rekomendasi untuk mengukur kinerja model. Berikut penjelasan singkat tentang masing-masing metrik:
+
+1. **Precision**: Precision mengukur seberapa akurat model dalam memprediksi kelas positif. Precision dihitung sebagai rasio true positive (TP) dibagi dengan jumlah prediksi positif yang benar (TP + false positive (FP)). Precision memberikan informasi tentang seberapa banyak prediksi positif yang benar dari semua prediksi positif yang dibuat oleh model. Semakin tinggi nilai precision, semakin sedikit false positive, yang berarti model memberikan sedikit kesalahan dalam memprediksi item yang tidak seharusnya direkomendasikan.
+
+2. **Recall**: Recall (juga dikenal sebagai sensitivity atau true positive rate) mengukur seberapa baik model dalam menemukan semua contoh kelas positif yang seharusnya direkomendasikan. Recall dihitung sebagai rasio true positive (TP) dibagi dengan jumlah contoh kelas positif yang benar (TP + false negative (FN)). Recall memberikan informasi tentang seberapa banyak contoh kelas positif yang dapat ditemukan oleh model. Semakin tinggi nilai recall, semakin sedikit false negative, yang berarti model tidak melewatkan banyak contoh kelas positif yang seharusnya direkomendasikan.
+
+3. **F1-score**: F1-score adalah rata-rata harmonik antara precision dan recall. F1-score memberikan pengukuran keseimbangan antara precision dan recall. Hal ini berguna ketika kita ingin memperhatikan keseimbangan antara memaksimalkan presisi dan recall secara bersamaan. F1-score dihitung sebagai 2 * (precision * recall) / (precision + recall). F1-score memiliki rentang nilai antara 0 hingga 1, di mana nilai 1 menunjukkan kinerja yang sempurna dalam memprediksi kelas positif.
+
+Ketiga metrik ini digunakan bersamaan untuk memberikan gambaran yang lebih lengkap tentang kinerja model. Precision dan recall dapat memberikan informasi yang berguna dalam konteks spesifik, tetapi F1-score menggabungkan kedua metrik ini menjadi satu angka yang mencerminkan kinerja secara keseluruhan.
+
+Pertama mari tentukan aktual item rekomendasinya, untuk menentukannya kita bisa melakukan uji atau tes pada hasil rekomendasi dengan cara membandingkan atribut-atribut dari hasil rekomendasi model dengan atribut input makanan yang ingin diberi rekomendasi, misalnya kita uji menggunakan nama makanan **roast turkey with cranberry sauce**. Kita lihat minimal dari 2 attribut awal memiliki kemiripan, misalnya **Healthy Food, nonveg, dan seterusnya**.
+
+Berikut ini hasil dari pengujian hasil rekomendasi _cosine similiarity_:
+
+Tabel 9. Pengujian hasil rekomendasi cosine similiarity
+
+|index|id|food\_name|food\_description|actual\_item|
+|---|---|---|---|---|
+|1|2\.0|chicken minced salad|Healthy Food nonveg olive oil chicken mince garlic minced onion salt black pepper carrot cabbage green onions sweet chilli sauce peanut butter ginger soy sauce fresh cilantro red pepper flakes crushed tarts|chicken minced salad|
+|86|87\.0|roasted spring chicken with root veggies|Healthy Food nonveg whole chicken thyme garlic lemon orange salt black pepper butter to rub extra olive oil carrot turnip beetroot chipotle powder parsley|roasted spring chicken with root veggies|
+|246|247\.0|microwave chicken steak|Healthy Food nonveg chicken breasts boneless eggs slightly whisked ginger paste garlic paste onions coriander leaves green chillies black pepper powder flour vinegar salt oil|microwave chicken steak|
+|70|71\.0|carrot ginger soup|Healthy Food veg Carrots Olive Oil Salt Vegetable Stock Ginger Thyme Onion Garlic Buds Pepper Freshly Picked|half roast chicken|
+|150|151\.0|fish andlouse|French nonveg white wine and water mix to cover onion salt bay leaf black pepper corns olive oil onion garlic tomatoes peeled and seeded basil leaves spring fresh thyme  optional 1 bay leaf salt and pepper olive oil wine vinegar prepared mustard salt and pepper assorted garden herbs  parsley basil etc|fish andlouse|
+
+Dari hasil pengujian 5 rekomendasi, terdapat 4 data yang sesuai dan 1 data yang tidak sesuai yaitu makanan **carrot ginger soup** dengan atribut Healthy Food, veg, dan seterusnya.
+
+Berikut ini hasil dari pengujian hasil rekomendasi _jaccard similiarity_:
+
+Tabel 10. Pengujian hasil rekomendasi jaccard similiarity
+
+|index|id|food\_name|food\_description|actual\_item|
+|---|---|---|---|---|
+|86|87\.0|roasted spring chicken with root veggies|Healthy Food nonveg whole chicken thyme garlic lemon orange salt black pepper butter to rub extra olive oil carrot turnip beetroot chipotle powder parsley|roasted spring chicken with root veggies|
+|1|2\.0|chicken minced salad|Healthy Food nonveg olive oil chicken mince garlic minced onion salt black pepper carrot cabbage green onions sweet chilli sauce peanut butter ginger soy sauce fresh cilantro red pepper flakes crushed tarts|chicken minced salad|
+|246|247\.0|microwave chicken steak|Healthy Food nonveg chicken breasts boneless eggs slightly whisked ginger paste garlic paste onions coriander leaves green chillies black pepper powder flour vinegar salt oil|microwave chicken steak|
+|70|71\.0|carrot ginger soup|Healthy Food veg Carrots Olive Oil Salt Vegetable Stock Ginger Thyme Onion Garlic Buds Pepper Freshly Picked|half roast chicken|
+|69|70\.0|shepherds salad \(tamatar-kheera salaad\)|Healthy Food veg 1 cucumber peeled and chopped onion tomato green chillies garlic buds pasarley olive oil lemon juice salt and pepper|fish andlouse|
+
+Dari hasil pengujian 5 rekomendasi, terdapat 3 data yang sesuai dan 2 data yang kurang sesuai yaitu makanan **carrot ginger soup** dan **shepherds salad** yang mempunyai atribut Healthy Food, veg, dan seterusnya.
+
+Selanjutnya kita panggil fungsi precision, recall dan F1 score dengan input aktual item dan rekomendasi item, langkah pertama dalam program adalah menyimpan nilai item aktual dari data evaluasi dalam variabel `actual_items_cosine` dan `actual_items_jaccard`. Kemudian, variabel `cosine_recommend_items` dan `jaccard_recommend_items` digunakan untuk menyimpan item rekomendasi yang dihasilkan oleh model menggunakan metode cosine similarity dan jaccard similarity.
+
+Selanjutnya, program membuat DataFrame kosong `eval_df` yang akan digunakan untuk menyimpan hasil evaluasi model, seperti precision, recall, dan F1-score. Kemudian, program menghitung precision, recall, dan F1-score untuk metode cosine similarity dan jaccard similarity menggunakan fungsi `precision`, `recall`, dan `f1_score`. Hasil evaluasi ini disimpan dalam dictionary `cosine_dict` dan `jaccard_dict`. Terakhir, program mengisi nilai-nilai evaluasi ke dalam DataFrame `eval_df` menggunakan loop dan menghasilkan tabel yang berisi evaluasi model untuk kedua metode similiarity tersebut.
+
+Tabel 11. Hasil metrik evaluasi precision, recall dan F1 score
+
+|index|Cosine Similiarity|Jaccard Similiarity|
+|---|---|---|
+|Precision|0\.8|0\.6|
+|Recall|0\.8|0\.6|
+|F1-score|0\.8000000000000002|0\.6|
+
+Dapat dilihat bahwa hasil Cosine Similiarity lebih baik dibandingkan Jaccard Similiarity dengan F1-Score 0.8 > 0.6, oleh karena itu sistem ini akan lebih baik jika menggunakan cosine similiarity untuk menentukan rekomendasi makanan yang lebih sesuai. Sistem rekomendasi makanan ini nantinya dapat membantu pengguna dalam menemukan makanan yang sesuai dengan preferensi mereka, memberikan pengalaman kuliner yang lebih kaya, dan memperluas pengetahuan mereka tentang berbagai jenis masakan. Selain itu, sistem ini juga dapat membantu dalam mengurangi kebingungan dalam memilih makanan dan memberikan rekomendasi yang personalisasi sesuai dengan selera dan kebutuhan pengguna
+
+## Kesimpulan
+
+Dalam penelitian ini, telah dikembangkan sebuah sistem rekomendasi makanan menggunakan metode cosine similarity dan jaccard similarity. Sistem ini bertujuan untuk memberikan rekomendasi makanan yang sesuai dengan preferensi pengguna berdasarkan kesamaan konten. Hasil evaluasi model menunjukkan bahwa kedua metode similiarity, yaitu cosine similarity dan jaccard similarity, memberikan performa yang baik dalam memberikan rekomendasi makanan. Precision, recall, dan F1-score yang dihitung pada kedua metode tersebut memberikan indikasi yang positif tentang keakuratan dan kebermanfaatan rekomendasi yang diberikan.
+
+Melalui penggunaan CountVectorizer untuk menganalisis kesamaan konten, sistem rekomendasi ini dapat mengidentifikasi makanan yang memiliki kemiripan dalam deskripsi dan fitur seperti jenis makanan, bahan-bahan, dan asal masakan. Hal ini memungkinkan pengguna untuk menemukan makanan baru yang sesuai dengan preferensi mereka dan mencoba variasi masakan. Dengan demikian, sistem rekomendasi makanan ini dapat membantu pengguna dalam menemukan makanan yang sesuai dengan preferensi mereka, memberikan pengalaman kuliner yang lebih kaya, dan memperluas pengetahuan mereka tentang berbagai jenis masakan. Selain itu, sistem ini juga dapat membantu dalam mengurangi kebingungan dalam memilih makanan dan memberikan rekomendasi yang personalisasi sesuai dengan selera dan kebutuhan pengguna.
+
+Namun, perlu diperhatikan bahwa sistem rekomendasi ini masih memiliki ruang untuk perbaikan. Pengembangan lebih lanjut dapat dilakukan dengan menggabungkan metode similiarity lainnya, menggali lebih dalam fitur-fitur yang relevan, dan meningkatkan performa model dengan menggunakan teknik-teknik machine learning yang lebih canggih. Secara keseluruhan, sistem rekomendasi makanan ini memiliki potensi besar dalam memberikan pengalaman kuliner yang lebih memuaskan dan membantu pengguna dalam menemukan makanan yang sesuai dengan selera dan preferensi mereka.
+
+## DAFTAR PUSTAKA
+
+- Almahmeed, M., & Alshammari, R. (2016). A content-based food recommendation approach. In 2016 7th International Conference on Information and Communication Systems (ICICS) (pp. 41-46). IEEE.
+
+## Sumber Eksternal
+
+- Dataset: [Kaggle: Food Recommendation System](https://www.kaggle.com/datasets/schemersays/food-recommendation-system)
