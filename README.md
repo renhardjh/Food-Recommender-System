@@ -63,7 +63,7 @@ Dataset Makanan:
 - **Food_ID:** data ID makanan
 - **Name:** Nama-nama makanan
 - **C_Type:** Type atau jenis makanan
-- **Veg_Non:** Kategori makanan vegetarian atau non-vegatarian
+- **Veg_Non:** Kategori makanan vegetarian atau non-vegetarian
 - **Describe:** Deskripsi bahan-bahan dasar makanan
 
 Dataset _Rating_:
@@ -194,7 +194,7 @@ Tabel 6. Dataframe Sebelum Pembersihan
 
 Hasilnya dataframe berisi 309 kolom yang berarti ada 309 daro 400 jenis makanan yang sesuai dengan data makanan preferensi penilaian pengguna. Selanjutnya, karena sistem rekomendasi yang akan dibuat merupakan _content-based filtering_ maka makanan yang akan diberi rekomendasi berdasarkan kesamaan kontennya, dalam penerapannya bisa menggunakan salah satu fitur baik itu **C_Type**, **Veg_Non** ataupun **Describe**, namun untuk hasil yang lebih baik bisa melakukan mixed pada ketiga fitur tersebut. Ketiga fitur ini dilakukan _join text_ menjadi satu konten agar lebih mudah dalam menentukan _similiarity_ atau kesamaannya. 
 
-Setelah melakukan penggabungan konten, data hasil penggabungan ini masih memiliki tanda baca seperti titik, koma, dan sebaginya, lakukan penghapusan tanda baca pada text, penghapusan bisa dilakukan dengan melakukan perulangan dan melakukan pengecekan terhadap _string_ yang mengadung tanda baca menggunakan metode _string punctuation_. 
+Setelah melakukan penggabungan konten, data hasil penggabungan ini masih memiliki tanda baca seperti titik, koma, dan sebagainya, lakukan penghapusan tanda baca pada text, penghapusan bisa dilakukan dengan melakukan perulangan dan melakukan pengecekan terhadap _string_ yang mengadung tanda baca menggunakan metode _string punctuation_. 
 
 Setelah data konten bersih yang berisi kumpulan kata-kata yang bisa disebut sebagai atibut-atribut yang di cek kesamaannya menggunakan _cosine similiarity_ dan _jaccard similiarity_. Lakukan konversi data series Food_ID, Name dan Description ke bentuk list untuk kemudian buatkan _dataframe_ baru, sehingga data yang digunakan hanya fitur yang relevan saja. Hasil dataframenya menjadi seperti ini:
 
@@ -300,13 +300,13 @@ Dari hasil output yang terlihat, bisa dikatakan model dengan _cosine similiarity
 
 Tabel 9. Hasil top 5 rekomendasi mengngunakan model jaccard similiarity
 
-|index|id|food\_name|food\_description|outcome|
-|---|---|---|---|---|
-|86|87\.0|roasted spring chicken with root veggies|Healthy Food nonveg whole chicken thyme garlic lemon orange salt black pepper butter to rub extra olive oil carrot turnip beetroot chipotle powder parsley|TP0|
-|1|2\.0|chicken minced salad|Healthy Food nonveg olive oil chicken mince garlic minced onion salt black pepper carrot cabbage green onions sweet chilli sauce peanut butter ginger soy sauce fresh cilantro red pepper flakes crushed tarts|TP1|
-|246|247\.0|microwave chicken steak|Healthy Food nonveg chicken breasts boneless eggs slightly whisked ginger paste garlic paste onions coriander leaves green chillies black pepper powder flour vinegar salt oil|TP2|
-|70|71\.0|carrot ginger soup|Healthy Food veg Carrots Olive Oil Salt Vegetable Stock Ginger Thyme Onion Garlic Buds Pepper Freshly Picked|FP3|
-|69|70\.0|shepherds salad \(tamatar-kheera salaad\)|Healthy Food veg 1 cucumber peeled and chopped onion tomato green chillies garlic buds pasarley olive oil lemon juice salt and pepper|FP4|
+|index|id|food\_name|food\_description|
+|---|---|---|---|
+|86|87\.0|roasted spring chicken with root veggies|Healthy Food nonveg whole chicken thyme garlic lemon orange salt black pepper butter to rub extra olive oil carrot turnip beetroot chipotle powder parsley|
+|1|2\.0|chicken minced salad|Healthy Food nonveg olive oil chicken mince garlic minced onion salt black pepper carrot cabbage green onions sweet chilli sauce peanut butter ginger soy sauce fresh cilantro red pepper flakes crushed tarts|
+|246|247\.0|microwave chicken steak|Healthy Food nonveg chicken breasts boneless eggs slightly whisked ginger paste garlic paste onions coriander leaves green chillies black pepper powder flour vinegar salt oil|
+|70|71\.0|carrot ginger soup|Healthy Food veg Carrots Olive Oil Salt Vegetable Stock Ginger Thyme Onion Garlic Buds Pepper Freshly Picked|
+|69|70\.0|shepherds salad \(tamatar-kheera salaad\)|Healthy Food veg 1 cucumber peeled and chopped onion tomato green chillies garlic buds pasarley olive oil lemon juice salt and pepper|
 
 Dari hasil output yang terlihat, bisa dikatakan model dengan _jaccard similiarity_ sistem sudah berhasil memberikan rekomendasi yang sesuai secara keseluruhan. Hal ini bisa dilihat dari kolom `food_description` ada beberapa kesamaan. Hasil rekomendasi dari kedua model menunjukan data yang sesuai memiliki beberapa kesamaan yang sesuai, namun manakah model yang lebih _cosine similiarity_ atau _jaccard similiarity_. Untuk membuktikannya mari lakukan evaluasi pada langkah selanjutnya.
 
