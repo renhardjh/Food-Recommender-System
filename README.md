@@ -29,8 +29,6 @@ Serta untuk menjawab pertanyaan tersebut, sistem rekomendasi makanan ini dibuat 
 
 ### Solution Statement
 
-Solution Statement
-
 Untuk mencapai tujuan tersebut, sistem akan menerapkan dua pendekatan solusi menggunakan metode content-based filtering dengan menggunakan cosine similarity dan jaccard similarity dengan pertimbangan sebagai berikut:
 
 1. Content-Based Filtering dengan Metode Cosine Similarity:
