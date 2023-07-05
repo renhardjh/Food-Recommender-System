@@ -128,7 +128,8 @@ Tabel 3. Persentasi Fitur C_Type
 
 Gambar 1. Visualisasi Fitur C_Type
 
-![image](https://raw.githubusercontent.com/renhardjh/Food-Recommender-System/main/Images/C_Type.png)
+![C_Type](https://github.com/renhardjh/Food-Recommender-System/assets/24643123/801929b5-49d0-4ad0-a775-ec10c561ba02)
+)
 
 Tabel 4. Persentasi Fitur Veg_Non
 
@@ -139,7 +140,8 @@ Tabel 4. Persentasi Fitur Veg_Non
 
 Gambar 2. Visualisasi Fitur Veg_Non
 
-![image](https://raw.githubusercontent.com/renhardjh/Food-Recommender-System/main/Images/Veg_Non.png)
+![Veg_Non](https://github.com/renhardjh/Food-Recommender-System/assets/24643123/abeaa973-221e-46e6-9522-b16368b8da6a)
+
 
 Tabel 5. Persentasi Fitur Rating
 
@@ -159,7 +161,8 @@ Tabel 5. Persentasi Fitur Rating
 
 Gambar 3. Visualisasi Fitur Rating
 
-![image](https://raw.githubusercontent.com/renhardjh/Food-Recommender-System/main/Images/Rating.png)
+![Rating](https://github.com/renhardjh/Food-Recommender-System/assets/24643123/66166279-af37-47eb-8b08-514f84e054f5)
+
 
 Dari hasil visualisasi tersebut, kesimpulan informasi yang bisa didapat sebagai berikut:
 
