@@ -2,7 +2,7 @@
 
 ## Latar Belakang
 
-Dalam era modern, dimana kita memiliki akses yang melimpah terhadap berbagai jenis makanan dan minuman, serta kebutuhan yang semakin kompleks seperti diet khusus, preferensi pribadi, dan kondisi kesehatan, penting bagi kita untuk memiliki panduan yang akurat dan personal dalam memilih makanan yang tepat. Ketika datang ke berbagai resto tempat makan, preferensi dan kebutuhan tiap individu sangat beragam. Beberapa orang mungkin memiliki preferensi vegetarian atau vegan, sedangkan yang lain mungkin memiliki preferensi terhadap makanan tertentu seperti makanan Asia, makanan organik, atau makanan tanpa gluten. Selain itu, kondisi kesehatan seperti alergi makanan, intoleransi, atau penyakit tertentu juga dapat mempengaruhi pilihan makanan seseorang.
+Dalam era modern, dimana setiap orang memiliki akses yang melimpah terhadap berbagai jenis makanan dan minuman, serta kebutuhan yang semakin kompleks seperti diet khusus, preferensi pribadi, dan kondisi kesehatan, penting untuk memiliki panduan yang akurat dan personal dalam memilih makanan yang tepat. Ketika datang ke berbagai resto tempat makan, preferensi dan kebutuhan tiap individu sangat beragam. Beberapa orang mungkin memiliki preferensi vegetarian atau vegan, sedangkan yang lain mungkin memiliki preferensi terhadap makanan tertentu seperti makanan Asia, makanan organik, atau makanan tanpa gluten. Selain itu, kondisi kesehatan seperti alergi makanan, intoleransi, atau penyakit tertentu juga dapat mempengaruhi pilihan makanan seseorang.
 
 Dalam konteks ini, Sistem Rekomendasi Makanan menjadi penting karena dapat membantu pengguna dalam menavigasi pilihan makanan yang luas dan memilih makanan yang sesuai dengan preferensi dan kebutuhan tiap individu. "Pendekatan rekomendasi berbasis konten dalam domain makanan berfokus pada analisis karakteristik item makanan seperti bahan, rasa, dan informasi nutrisi untuk menghasilkan rekomendasi personal untuk pengguna" (Almahmeed & Alshammari, 2016). Sistem ini dapat menghemat waktu dan usaha pengguna dalam mencari dan memilih makanan yang cocok, serta meningkatkan kepuasan dan kualitas pengalaman kuliner mereka.
 
@@ -10,9 +10,9 @@ Dalam konteks ini, Sistem Rekomendasi Makanan menjadi penting karena dapat memba
 
 Dalam industri makanan, pengguna seringkali dihadapkan pada banyak pilihan makanan yang tersedia. Namun, pengguna dapat mengalami kesulitan dalam memilih makanan yang sesuai dengan preferensi dan kebutuhan mereka. Oleh karena itu, pengembangan Sistem Rekomendasi Makanan dapat membantu pengguna dalam menemukan makanan yang sesuai dengan preferensi mereka. Pemahaman bisnis ini untuk mengembangkan sebuah Sistem Rekomendasi Makanan yang dapat memberikan rekomendasi makanan yang personal dan relevan kepada pengguna. Sistem ini akan menggunakan teknik-teknik seperti filtrasi kolaboratif, filtrasi berbasis konten, atau kombinasi dari keduanya untuk menghasilkan rekomendasi yang akurat dan memuaskan.
 
-Sistem rekomendasi ini juga memiliki manfaat bisnis seperti meningkatkan pengalaman pengguna, dengan adanya sistem rekomendasi, pengguna dapat dengan mudah menemukan makanan yang cocok dengan preferensi mereka, meningkatkan kepuasan dan pengalaman pengguna. Meningkatkan penjualan dan retensi pelanggan, dengan memberikan rekomendasi yang relevan, sistem ini dapat membantu meningkatkan penjualan makanan dan mempertahankan pelanggan yang loyal. Meningkatkan efisiensi operasional,ndengan memanfaatkan teknologi otomatisasi dalam sistem rekomendasi, proses pengambilan keputusan makanan dapat ditingkatkan, sehingga mengurangi waktu yang dihabiskan dalam pencarian makanan.
+Sistem rekomendasi ini juga memiliki manfaat bisnis seperti meningkatkan pengalaman pengguna, dengan adanya sistem rekomendasi, pengguna dapat dengan mudah menemukan makanan yang cocok dengan preferensi mereka, meningkatkan kepuasan dan pengalaman pengguna. Meningkatkan penjualan dan retensi pelanggan, dengan memberikan rekomendasi yang relevan, sistem ini dapat membantu meningkatkan penjualan makanan dan mempertahankan pelanggan yang loyal. Meningkatkan efisiensi operasional dengan memanfaatkan teknologi otomatisasi dalam sistem rekomendasi, proses pengambilan keputusan makanan dapat ditingkatkan, sehingga mengurangi waktu yang dihabiskan dalam pencarian makanan.
 
-Pengguna utama sistem ini adalah konsumen atau pengguna akhir yang mencari rekomendasi makanan. Stakeholder lainnya termasuk pemilik bisnis makanan, penyedia layanan makanan, dan pemasar makanan yang ingin mempromosikan produk mereka. Dengan pemahaman bisnis yang jelas, pengembangan Sistem Rekomendasi Makanan dapat difokuskan pada mencapai tujuan bisnis yang telah ditetapkan dan memberikan manfaat yang signifikan bagi pengguna dan stakeholder terkait.
+Pengguna utama sistem ini adalah konsumen atau pengguna akhir yang mencari rekomendasi makanan. Stakeholder lainnya termasuk pemilik bisnis makanan, penyedia layanan makanan, dan pemasar makanan yang ingin mempromosikan produk mereka kepada target pasar yang tepat secara efektif. Dengan menggunakan teknik-teknik seperti filtrasi kolaboratif dan filtrasi berbasis konten, sistem ini dapat menganalisis preferensi pengguna dan karakteristik makanan untuk memberikan rekomendasi yang relevan. Pemilik bisnis makanan dapat memanfaatkan rekomendasi ini untuk mempromosikan produk mereka kepada pengguna yang memiliki minat dan preferensi serupa. Hal ini akan membantu pemilik bisnis makanan meningkatkan efektivitas kampanye promosi mereka dengan mengarahkan upaya pemasaran mereka kepada audiens yang berpotensi tertarik dan berpeluang tinggi untuk membeli produk mereka. Dengan pemahaman bisnis yang jelas, pengembangan Sistem Rekomendasi Makanan dapat difokuskan pada mencapai tujuan bisnis yang telah ditetapkan dan memberikan manfaat yang signifikan bagi pengguna dan stakeholder terkait.
 
 ### Problem Statement and Goals
 
@@ -23,25 +23,32 @@ Berdasarkan kondisi yang telah diuraikan sebelumnya, sistem rekomendasi makanan 
 
 Serta untuk menjawab pertanyaan tersebut, sistem rekomendasi makanan ini dibuat dengan tujuan atau goals sebagai berikut:
 
-1. Mengembangkan Sistem Rekomendasi Makanan yang dapat memberikan rekomendasi makanan yang personal dan relevan kepada pengguna.
-2. Meningkatkan pengalaman pengguna dalam menemukan makanan yang sesuai dengan preferensi mereka.
-3. Membantu pemilik bisnis makanan untuk mempromosikan produk mereka kepada target pasar yang tepat.
+1. Mengembangkan sistem rekomendasi makanan yang mencapai tingkat akurasi rekomendasi sebesar 80% berdasarkan penilaian pengguna dalam waktu 3 bulan.
+2. Meningkatkan tingkat kepuasan pengguna dalam menemukan makanan yang sesuai sebesar 15% dalam 4 bulan pertama setelah implementasi sistem.
+3. Meningkatkan tingkat konversi promosi produk makanan sebesar 15% dengan mengarahkan promosi kepada target pasar yang tepat berdasarkan rekomendasi sistem dalam 1 tahun.
 
 ### Solution Statement
 
-Untuk mencapai tujuan tersebut, kami mengajukan dua pendekatan solusi menggunakan metode _content-based filtering_ dengan menggunakan _cosine similarity_ dan _jaccard similarity_ dengan pertimbangan sebagai berikut:
+Solution Statement
 
-1. _Content-Based Filtering_ dengan Metode _Cosine Similarity_:
-   - Pendekatan ini akan menggunakan analisis konten dari makanan, seperti deskripsi, bahan, dan karakteristik lainnya, untuk membangun profil preferensi pengguna.
-   - Metode _cosine similarity_ akan digunakan untuk mengukur sejauh mana kesamaan antara makanan yang ada dalam dataset dengan preferensi pengguna.
-   - Dengan membandingkan preferensi pengguna dengan makanan yang ada, sistem akan memberikan rekomendasi makanan yang memiliki kesamaan konten tertinggi.
+Untuk mencapai tujuan tersebut, sistem akan menerapkan dua pendekatan solusi menggunakan metode content-based filtering dengan menggunakan cosine similarity dan jaccard similarity dengan pertimbangan sebagai berikut:
 
-2. _Content-Based Filtering_ dengan Metode _Jaccard Similarity_:
-   - Pendekatan ini juga akan menggunakan analisis konten makanan untuk membangun profil preferensi pengguna.
-   - Metode _jaccard similarity_ akan digunakan untuk mengukur kesamaan antara himpunan kata-kata kunci dalam deskripsi makanan dengan preferensi pengguna.
-   - Dengan menggunakan metode ini, sistem akan memberikan rekomendasi makanan yang memiliki kesamaan kata-kunci tertinggi dengan preferensi pengguna.
+1. Content-Based Filtering dengan Metode Cosine Similarity:
+   - Pendekatan ini akan menggunakan analisis konten makanan untuk membangun profil preferensi pengguna.
+   - Pertama, fitur-fitur penting dari makanan seperti deskripsi, bahan, dan atribut lainnya akan diekstraksi dan diwakili dalam bentuk vektor.
+   - Representasi vektor makanan dan preferensi pengguna akan dibuat dengan menggunakan teknik seperti CountVectorizer atau TF-IDFVectorizer.
+   - Selanjutnya, menggunakan metode cosine similarity, akan dihitung sejauh mana kesamaan antara vektor representasi makanan dengan vektor representasi preferensi pengguna.
+   - Semakin tinggi nilai cosine similarity, semakin mirip makanan dengan preferensi pengguna, dan makanan tersebut akan direkomendasikan.
 
-Dengan mengadopsi pendekatan content-based filtering menggunakan metode cosine similarity dan jaccard similarity, diharapkan sistem rekomendasi makanan dapat memberikan rekomendasi yang lebih personal dan relevan kepada pengguna, meningkatkan pengalaman pengguna dalam menemukan makanan, serta membantu pemilik bisnis makanan untuk mempromosikan produk mereka secara efektif.
+2. Content-Based Filtering dengan Metode Jaccard Similarity:
+   - Pendekatan ini juga menggunakan analisis konten makanan untuk membangun profil preferensi pengguna.
+   - Kata-kata kunci penting dari deskripsi makanan dan preferensi pengguna akan diekstraksi dan dijadikan sebagai himpunan kata-kunci.
+   - Himpunan kata-kunci makanan dan preferensi pengguna akan digunakan untuk menghitung kesamaan menggunakan metode jaccard similarity.
+   - Semakin tinggi nilai jaccard similarity, semakin mirip kata-kunci makanan dengan kata-kunci preferensi pengguna, dan makanan tersebut akan direkomendasikan.
+
+Dengan mengadopsi pendekatan content-based filtering menggunakan metode cosine similarity dan jaccard similarity, diharapkan sistem rekomendasi makanan dapat memberikan rekomendasi yang lebih personal dan relevan kepada pengguna. Fitur-fitur penting dari makanan diekstraksi dan diwakili dalam bentuk vektor, sementara kata-kunci penting dari deskripsi makanan dan preferensi pengguna digunakan untuk menghitung kesamaan. Metode cosine similarity dan jaccard similarity digunakan untuk mengukur tingkat kesamaan antara makanan dan preferensi pengguna. Hal ini memungkinkan sistem untuk merekomendasikan makanan yang memiliki kesamaan konten atau kata-kunci tertinggi dengan preferensi pengguna.
+
+Dengan demikian, sistem rekomendasi ini diharapkan dapat membantu pengguna dalam menemukan makanan yang sesuai dengan preferensi mereka, meningkatkan pengalaman pengguna, serta membantu pemilik bisnis makanan dalam mempromosikan produk mereka kepada target pasar yang tepat secara efektif.
 
 ## Data Understanding
 
@@ -95,11 +102,11 @@ Dataset mempunyai total 3 fitur kategori dimana semuanya mempunyai tipe data _fl
 
 ### Data Cleansing
 
-Datasets yang ada saat ini perlu dilakukan pembersihan terlebih dahulu sebelum digunakan, sehingga data tidak bias dan bisa dieksplorasi secara maksimal. Metode pembersihan yang dilakukan ialah dengan mengecek data kosong (NaN) dan kemudian data kosong tersebut hapus. Selain itu lakukan juga pengecekan data duplikat yang mungkin ada. Dari hasil pengecekan dataset makanan, tidak ditemukan adanya data kosong ataupun duplikat. Sedangkan pada dataset _rating_ terdapat 1 data kosong pada baris ke 511. Jalankan fungsi drop kemudian dataset kita sudah bersih.
+Datasets yang ada saat ini perlu dilakukan pembersihan terlebih dahulu sebelum digunakan, sehingga data tidak bias dan bisa dieksplorasi secara maksimal. Metode pembersihan yang dilakukan ialah dengan mengecek data kosong (NaN) dan kemudian data kosong tersebut hapus. Selain itu lakukan juga pengecekan data duplikat yang mungkin ada. Dari hasil pengecekan dataset makanan, tidak ditemukan adanya data kosong ataupun duplikat. Sedangkan pada dataset _rating_ terdapat 1 data kosong pada baris ke 511. Jalankan fungsi drop kemudian dataset sekarang sudah bersih.
 
 ### Univariate Analysis
 
-Untuk memahami dan menganalisis satu variabel tunggal dalam sebuah dataset kita bisa menggunakan metode analisis statistik _univariate analysis_, fokus diberikan pada karakteristik dan distribusi variabel tersebut secara individual, tanpa mempertimbangkan hubungan dengan variabel lainnya. Tujuan utama utamanya ialah untuk menggambarkan, meringkas, dan memahami data pada variabel tunggal tersebut. Pertama-tama gabungkan dataset makanan dan _rating_ menggunakan fungsi merge pada pandas. Gabungkan kedua dataframe berdasarkan Food_ID, penggabungan dilakukan dengan metode 'left' yang berarti semua data dari _rating_ akan tetap ada dalam hasil penggabungan, sedangkan data dari _makanan_ yang memiliki Food_ID yang cocok akan ditambahkan, sehingga data sekarang berisi 512 baris dan 8 kolom. Setelah itu data diurutkan menggunakan fungsi _sort_ diurutkan dalam dataframe berdasarkan nilai Food_ID secara _ascending_.
+Untuk memahami dan menganalisis satu variabel tunggal dalam sebuah dataset, bisa menggunakan metode analisis statistik _univariate analysis_, fokus diberikan pada karakteristik dan distribusi variabel tersebut secara individual, tanpa mempertimbangkan hubungan dengan variabel lainnya. Tujuan utama utamanya ialah untuk menggambarkan, meringkas, dan memahami data pada variabel tunggal tersebut. Pertama-tama gabungkan dataset makanan dan _rating_ menggunakan fungsi merge pada pandas. Gabungkan kedua dataframe berdasarkan Food_ID, penggabungan dilakukan dengan metode 'left' yang berarti semua data dari _rating_ akan tetap ada dalam hasil penggabungan, sedangkan data dari _makanan_ yang memiliki Food_ID yang cocok akan ditambahkan, sehingga data sekarang berisi 512 baris dan 8 kolom. Setelah itu data diurutkan menggunakan fungsi _sort_ diurutkan dalam dataframe berdasarkan nilai Food_ID secara _ascending_.
 
 Setelah itu, lakukan pengecekan lagi terhadap data kosong dan duplikat, hasilnya tidak ditemukan data tetap bersih. Langkah selanjutnya, barulah bisa melakukan visualisasi terhadap data, sehingga data bisa dianalysis secara individual. Lakukan perhitungan persentasi data, kemudian lakukan _count plot bar_ menggunakan matplotlib.pyplot, berikut hasilnya:
 
@@ -121,7 +128,7 @@ Tabel 3. Persentasi Fitur C_Type
 
 Gambar 1. Visualisasi Fitur C_Type
 
-![image](https://github.com/renhardjh/Food-Recommender-System/blob/main/Images/C_Type.png)
+![image](https://raw.githubusercontent.com/renhardjh/Food-Recommender-System/main/Images/C_Type.png)
 
 Tabel 4. Persentasi Fitur Veg_Non
 
@@ -132,7 +139,7 @@ Tabel 4. Persentasi Fitur Veg_Non
 
 Gambar 2. Visualisasi Fitur Veg_Non
 
-![image](https://github.com/renhardjh/Food-Recommender-System/blob/main/Images/Veg_Non.png)
+![image](https://raw.githubusercontent.com/renhardjh/Food-Recommender-System/main/Images/Veg_Non.png)
 
 Tabel 5. Persentasi Fitur Rating
 
@@ -152,7 +159,7 @@ Tabel 5. Persentasi Fitur Rating
 
 Gambar 3. Visualisasi Fitur Rating
 
-![image](https://github.com/renhardjh/Food-Recommender-System/blob/main/Images/Rating.png)
+![image](https://raw.githubusercontent.com/renhardjh/Food-Recommender-System/main/Images/Rating.png)
 
 Dari hasil visualisasi tersebut, kesimpulan informasi yang bisa didapat sebagai berikut:
 
@@ -165,15 +172,30 @@ Dari hasil visualisasi tersebut, kesimpulan informasi yang bisa didapat sebagai 
 
 ## Data Preparation
 
-Sebelum mempersiapkan model, perlu dilakukan persiapan data terlebih dahulu, agar data yang digunakan pada model bisa sesuai. Pertama, buang data duplikat pada Food_ID, karena sistem rekomendasi yang akan dibuat berdasarkan nama-nama makanan, untuk mendapatkan nama-nama makanan yang valid bisa menggunakan nilai unik berdasarkan ID. Hasilnya dataframe berisi 309 kolom yang berarti ada 309 daro 400 jenis makanan yang sesuai dengan data makanan preferensi penilaian pengguna. 
+Sebelum mempersiapkan model, perlu dilakukan persiapan data terlebih dahulu, agar data yang digunakan pada model bisa sesuai. Pertama, buang data duplikat pada Food_ID, karena sistem rekomendasi yang akan dibuat berdasarkan nama-nama makanan, untuk mendapatkan nama-nama makanan yang valid bisa menggunakan nilai unik berdasarkan ID. 
 
-Selanjutnya, karena sistem rekomendasi yang akan dibuat merupakan _content-based filtering_ maka makanan yang akan diberi rekomendasi berdasarkan kesamaan kontennya, kita bisa menggunakan salah satu fitur baik itu **C_Type**, **Veg_Non** ataupun **Describe**, namun untuk hasil yang lebih baik kita bisa melakukan mixed pada ketiga fitur tersebut. Ketiga fitur ini dilakukan _join text_ menjadi satu konten agar lebih mudah dalam menentukan _similiarity_ atau kesamaannya. 
+Tabel 6. Dataframe Sebelum Pembersihan
+
+|index|User\_ID|Food\_ID|Rating|Name|C\_Type|Veg\_Non|Describe|
+|---|---|---|---|---|---|---|---|
+|376|71\.0|1\.0|10\.0|summer squash salad|Healthy Food|veg|white balsamic vinegar, lemon juice, lemon rind, red chillies, garlic cloves \(crushed\), olive oil, summer squash \(zucchini\), sea salt, black pepper, basil leaves|
+|253|49\.0|1\.0|5\.0|summer squash salad|Healthy Food|veg|white balsamic vinegar, lemon juice, lemon rind, red chillies, garlic cloves \(crushed\), olive oil, summer squash \(zucchini\), sea salt, black pepper, basil leaves|
+|200|39\.0|2\.0|10\.0|chicken minced salad|Healthy Food|non-veg|olive oil, chicken mince, garlic \(minced\), onion, salt, black pepper, carrot, cabbage, green onions, sweet chilli sauce, peanut butter, ginger, soy sauce, fresh cilantro, red pepper flakes \(crushed\), tarts|
+|50|9\.0|2\.0|3\.0|chicken minced salad|Healthy Food|non-veg|olive oil, chicken mince, garlic \(minced\), onion, salt, black pepper, carrot, cabbage, green onions, sweet chilli sauce, peanut butter, ginger, soy sauce, fresh cilantro, red pepper flakes \(crushed\), tarts|
+|116|22\.0|2\.0|5\.0|chicken minced salad|Healthy Food|non-veg|olive oil, chicken mince, garlic \(minced\), onion, salt, black pepper, carrot, cabbage, green onions, sweet chilli sauce, peanut butter, ginger, soy sauce, fresh cilantro, red pepper flakes \(crushed\), tarts|
+|456|89\.0|3\.0|7\.0|sweet chilli almonds|Snack|veg|almonds whole, egg white, curry leaves, salt, sugar \(fine grain\), red chilli powder|
+|396|77\.0|3\.0|1\.0|sweet chilli almonds|Snack|veg|almonds whole, egg white, curry leaves, salt, sugar \(fine grain\), red chilli powder|
+|457|90\.0|4\.0|6\.0|tricolour salad|Healthy Food|veg|vinegar, honey/sugar, soy sauce, salt, garlic cloves \(minced\), chilli pepper \(sliced\), green papaya, carrot \(peeled\), cucumbers, mint leaves, toasted peanuts|
+|210|41\.0|4\.0|6\.0|tricolour salad|Healthy Food|veg|vinegar, honey/sugar, soy sauce, salt, garlic cloves \(minced\), chilli pepper \(sliced\), green papaya, carrot \(peeled\), cucumbers, mint leaves, toasted peanuts|
+|144|28\.0|5\.0|10\.0|christmas cake|Dessert|veg|christmas dry fruits \(pre-soaked\), orange zest, lemon zest, jaggery syrup, almond flour, apple, butter \(softened\), eggs|
+
+Hasilnya dataframe berisi 309 kolom yang berarti ada 309 daro 400 jenis makanan yang sesuai dengan data makanan preferensi penilaian pengguna. Selanjutnya, karena sistem rekomendasi yang akan dibuat merupakan _content-based filtering_ maka makanan yang akan diberi rekomendasi berdasarkan kesamaan kontennya, dalam penerapannya bisa menggunakan salah satu fitur baik itu **C_Type**, **Veg_Non** ataupun **Describe**, namun untuk hasil yang lebih baik bisa melakukan mixed pada ketiga fitur tersebut. Ketiga fitur ini dilakukan _join text_ menjadi satu konten agar lebih mudah dalam menentukan _similiarity_ atau kesamaannya. 
 
 Setelah melakukan penggabungan konten, data hasil penggabungan ini masih memiliki tanda baca seperti titik, koma, dan sebaginya, lakukan penghapusan tanda baca pada text, penghapusan bisa dilakukan dengan melakukan perulangan dan melakukan pengecekan terhadap _string_ yang mengadung tanda baca menggunakan metode _string punctuation_. 
 
 Setelah data konten bersih yang berisi kumpulan kata-kata yang bisa disebut sebagai atibut-atribut yang di cek kesamaannya menggunakan _cosine similiarity_ dan _jaccard similiarity_. Lakukan konversi data series Food_ID, Name dan Description ke bentuk list untuk kemudian buatkan _dataframe_ baru, sehingga data yang digunakan hanya fitur yang relevan saja. Hasil dataframenya menjadi seperti ini:
 
-Tabel 6. Dataframe Mixed Fitur
+Tabel 7. Dataframe Setelah Pembersihan dan Melakukan Mixed Fitur
 
 |index|id|food\_name|food\_description|
 |---|---|---|---|
@@ -190,17 +212,17 @@ Tabel 6. Dataframe Mixed Fitur
 
 ## Pengembangan Model
 
-Setelah data selesai dipersiapkan, sudah bersih dan hanya berisi fitur-fitur yang relevan saja, sekarang saatnya membuat model sistem rekomendasi makanan menggunakan pendekatan _content based filtering_. Pertama mulai dari melakukan pemrosesan teks yang digunakan pada sistem rekomendasi untuk menemukan representasi fitur penting dari setiap kategori makanan. Dalam kasus ini, pemrosesan teks menggunakan CountVectorizer yang merupakan salah satu teknik dalam pemrosesan teks yang digunakan untuk mengubah teks menjadi representasi numerik berdasarkan frekuensi kemunculan kata-kata. Dalam konteks model sistem rekomendasi makanan, CountVectorizer digunakan untuk mengubah deskripsi makanan atau kata-kata terkait menjadi fitur numerik yang dapat digunakan dalam pemodelan machine learning. Kemudian untuk menghitung kesamaan dari konten setiap kategori makanan dalam sistem ini akan menggunakan cosine similiarity dan jaccard similiarity. Lalu kita akan bandingkan performa dan hasil dari kedua model tersebut untuk menemukan mana yang lebih baik.
+Setelah data selesai dipersiapkan, sudah bersih dan hanya berisi fitur-fitur yang relevan saja, sekarang saatnya membuat model sistem rekomendasi makanan menggunakan pendekatan _content based filtering_. Pertama mulai dari melakukan pemrosesan teks yang digunakan pada sistem rekomendasi untuk menemukan representasi fitur penting dari setiap kategori makanan. Dalam kasus ini, pemrosesan teks menggunakan CountVectorizer yang merupakan salah satu teknik dalam pemrosesan teks yang digunakan untuk mengubah teks menjadi representasi numerik berdasarkan frekuensi kemunculan kata-kata. Dalam konteks model sistem rekomendasi makanan, CountVectorizer digunakan untuk mengubah deskripsi makanan atau kata-kata terkait menjadi fitur numerik yang dapat digunakan dalam pemodelan machine learning. Kemudian untuk menghitung kesamaan dari konten setiap kategori makanan dalam sistem ini akan menggunakan cosine similiarity dan jaccard similiarity. Lalu bandingkan performa dan hasil dari kedua model tersebut untuk menemukan mana yang lebih baik.
 
 ### Tokenisasi
 
-CountVectorizer menghitung frekuensi kemunculan setiap kata dalam teks dan menghasilkan vektor numerik berdasarkan frekuensi tersebut. Setiap kata dalam teks akan menjadi fitur dalam vektor, dan nilai dalam vektor tersebut menunjukkan berapa kali kata tersebut muncul dalam teks. CountVectorizer memungkinkan kita untuk mengubah teks menjadi representasi numerik yang dapat digunakan oleh algoritma machine learning untuk melatih model rekomendasi. Alasannya sistem ini menggunakan CountVectorizer karena kemudahan implementasi dan interpretasi hasilnya. CountVectorizer hanya berfokus pada frekuensi kemunculan kata dalam teks tanpa memperhitungkan bobot kata tersebut. Dalam konteks sistem rekomendasi makanan, frekuensi kemunculan kata dapat memberikan informasi penting tentang preferensi pengguna terhadap jenis makanan atau bahan-bahan tertentu.
+CountVectorizer menghitung frekuensi kemunculan setiap kata dalam teks dan menghasilkan vektor numerik berdasarkan frekuensi tersebut. Setiap kata dalam teks akan menjadi fitur dalam vektor, dan nilai dalam vektor tersebut menunjukkan berapa kali kata tersebut muncul dalam teks. CountVectorizer memungkinkan sistem untuk mengubah teks menjadi representasi numerik yang dapat digunakan oleh algoritma machine learning untuk melatih model rekomendasi. Alasannya sistem ini menggunakan CountVectorizer karena kemudahan implementasi dan interpretasi hasilnya. CountVectorizer hanya berfokus pada frekuensi kemunculan kata dalam teks tanpa memperhitungkan bobot kata tersebut. Dalam konteks sistem rekomendasi makanan, frekuensi kemunculan kata dapat memberikan informasi penting tentang preferensi pengguna terhadap jenis makanan atau bahan-bahan tertentu.
 
 Berikut langkah-langkah mengimplementasi CountVectorizer:
 
 1. Menginisialisasi CountVectorizer dengan parameter stop_words='english' dan ngram_range=(1, 3). 
    - stop_words='english' digunakan untuk menghapus kata-kata umum dalam bahasa Inggris, seperti "the", "and", "is", dsb.
-   - ngram_range=(1, 3) menunjukkan bahwa kita ingin mempertimbangkan unigram, bigram, dan trigram dalam teks. Misalnya, "chicken", "fried chicken", "spicy fried chicken".
+   - ngram_range=(1, 3) menunjukkan bahwa ingin mempertimbangkan unigram, bigram, dan trigram dalam teks. Misalnya, "chicken", "fried chicken", "spicy fried chicken".
 
 2. Menggunakan metode fit_transform pada CountVectorizer untuk melakukan proses fitting dan transformasi teks ke dalam bentuk matriks fitur. Data yang digunakan adalah kolom 'food_description' dari dataframe final_food.
 
@@ -219,7 +241,7 @@ Berikut langkah-langkah implementasinya dalam sistem ini:
 
 2. Menggunakan cosine_similarity dengan parameter cv_matrix, cv_matrix. 
    - cv_matrix adalah matriks fitur yang dihasilkan oleh CountVectorizer pada langkah sebelumnya. Matriks ini berisi representasi numerik dari deskripsi makanan.
-   - cv_matrix, cv_matrix berarti kita menghitung kesamaan kosinus antara setiap baris pada cv_matrix dengan setiap baris lainnya. Dalam konteks ini, kita sedang mencari kesamaan antara deskripsi makanan satu dengan yang lain.
+   - cv_matrix, cv_matrix berarti menghitung kesamaan kosinus antara setiap baris pada cv_matrix dengan setiap baris lainnya. Dalam konteks ini, akan dicari kesamaan antara deskripsi makanan satu dengan yang lain.
 
 3. Hasil dari cosine_similarity adalah matriks similiaritas kosinus, di mana setiap elemen menunjukkan tingkat kesamaan antara dua deskripsi makanan berdasarkan representasi numeriknya. Semakin tinggi nilai similiaritas kosinus, semakin mirip atau serupa dua deskripsi makanan tersebut.
 
@@ -259,9 +281,9 @@ Berikut langkah-langkah implementasinya:
 
 8. `return final_food.iloc[food_indices]`: Mengembalikan dataframe `final_food` yang berisi rekomendasi makanan berdasarkan indeks makanan yang telah dikumpulkan sebelumnya.
 
-Setelah membuat fungsi untuk mendapatkan rekomendasinya, panggil fungsi tersebut dengan input nama makanan dan modelnya satu persatu. Mari kita coba untuk mendapatkan preferensi rekomendasi dari makanan _roast turkey with cranberry sauce_ Berikut hasilnya:
+Setelah membuat fungsi untuk mendapatkan rekomendasinya, panggil fungsi tersebut dengan input nama makanan dan modelnya satu persatu. Mari coba untuk mendapatkan preferensi rekomendasi dari makanan _roast turkey with cranberry sauce_ Berikut hasilnya:
 
-Tabel 7. Hasil top 5 rekomendasi mengngunakan model cosine similiarity
+Tabel 8. Hasil top 5 rekomendasi mengngunakan model cosine similiarity
 
 |index|id|food\_name|food\_description|
 |---|---|---|---|
@@ -271,9 +293,9 @@ Tabel 7. Hasil top 5 rekomendasi mengngunakan model cosine similiarity
 |70|71\.0|carrot ginger soup|Healthy Food veg Carrots Olive Oil Salt Vegetable Stock Ginger Thyme Onion Garlic Buds Pepper Freshly Picked|
 |150|151\.0|fish andlouse|French nonveg white wine and water mix to cover onion salt bay leaf black pepper corns olive oil onion garlic tomatoes peeled and seeded basil leaves spring fresh thyme  optional 1 bay leaf salt and pepper olive oil wine vinegar prepared mustard salt and pepper assorted garden herbs  parsley basil etc|
 
-Dari hasil output yang kita lihat, bisa dikatakan model dengan _cosine similiarity_ sistem sudah berhasil memberikan rekomendasi yang sesuai secara keseluruhan. Hal ini bisa dilihat dari kolom `food_description` ada beberapa kesamaan.
+Dari hasil output yang terlihat, bisa dikatakan model dengan _cosine similiarity_ sistem sudah berhasil memberikan rekomendasi yang sesuai secara keseluruhan. Hal ini bisa dilihat dari kolom `food_description` ada beberapa kesamaan.
 
-Tabel 8. Hasil top 5 rekomendasi mengngunakan model jaccard similiarity
+Tabel 9. Hasil top 5 rekomendasi mengngunakan model jaccard similiarity
 
 |index|id|food\_name|food\_description|outcome|
 |---|---|---|---|---|
@@ -283,25 +305,25 @@ Tabel 8. Hasil top 5 rekomendasi mengngunakan model jaccard similiarity
 |70|71\.0|carrot ginger soup|Healthy Food veg Carrots Olive Oil Salt Vegetable Stock Ginger Thyme Onion Garlic Buds Pepper Freshly Picked|FP3|
 |69|70\.0|shepherds salad \(tamatar-kheera salaad\)|Healthy Food veg 1 cucumber peeled and chopped onion tomato green chillies garlic buds pasarley olive oil lemon juice salt and pepper|FP4|
 
-Dari hasil output yang kita lihat, bisa dikatakan model dengan _jaccard similiarity_ sistem sudah berhasil memberikan rekomendasi yang sesuai secara keseluruhan. Hal ini bisa dilihat dari kolom `food_description` ada beberapa kesamaan. Hasil rekomendasi dari kedua model menunjukan data yang sesuai memiliki beberapa kesamaan yang sesuai, namun manakah model yang lebih _cosine similiarity_ atau _jaccard similiarity_. Untuk membuktikannya mari kita lakukan evaluasi pada langkah selanjutnya.
+Dari hasil output yang terlihat, bisa dikatakan model dengan _jaccard similiarity_ sistem sudah berhasil memberikan rekomendasi yang sesuai secara keseluruhan. Hal ini bisa dilihat dari kolom `food_description` ada beberapa kesamaan. Hasil rekomendasi dari kedua model menunjukan data yang sesuai memiliki beberapa kesamaan yang sesuai, namun manakah model yang lebih _cosine similiarity_ atau _jaccard similiarity_. Untuk membuktikannya mari lakukan evaluasi pada langkah selanjutnya.
 
 ## Evaluasi Model
 
-Evaluasi model sangat penting setelah pembuatan model karena memberikan pemahaman tentang seberapa baik model bekerja dalam memenuhi tujuan yang ditetapkan. Evaluasi model membantu dalam mengukur kinerja dan kualitas model serta memberikan wawasan tentang seberapa akurat dan dapat diandalkan model dalam menghasilkan prediksi atau rekomendasi. Setelah kita selesai membuat model dengan _cosine similiarity_ dan _jaccard similiarity_, perlu melakukan evaluasi terhadap model-model tesebut untuk mengetahui seberapa akurat dan seberapa presisi predikisi atau rekomendasi yang dihasilkan. Untuk mengevaluasi model, kita akan menggunakan _precision_, _recall_ dan _F1 score_, evaluasi model menggunakan ketiga metrik tersebut merupakan cara yang umum digunakan dalam sistem klasifikasi dan rekomendasi untuk mengukur kinerja model. Berikut penjelasan singkat tentang masing-masing metrik:
+Evaluasi model sangat penting setelah pembuatan model karena memberikan pemahaman tentang seberapa baik model bekerja dalam memenuhi tujuan yang ditetapkan. Evaluasi model membantu dalam mengukur kinerja dan kualitas model serta memberikan wawasan tentang seberapa akurat dan dapat diandalkan model dalam menghasilkan prediksi atau rekomendasi. Setelah selesai membuat model dengan _cosine similiarity_ dan _jaccard similiarity_, perlu melakukan evaluasi terhadap model-model tesebut untuk mengetahui seberapa akurat dan seberapa presisi predikisi atau rekomendasi yang dihasilkan. Untuk mengevaluasi model, dalam hal ini akan menggunakan _precision_, _recall_ dan _F1 score_, evaluasi model menggunakan ketiga metrik tersebut merupakan cara yang umum digunakan dalam sistem klasifikasi dan rekomendasi untuk mengukur kinerja model. Berikut penjelasan singkat tentang masing-masing metrik:
 
 1. **Precision**: Precision mengukur seberapa akurat model dalam memprediksi kelas positif. Precision dihitung sebagai rasio true positive (TP) dibagi dengan jumlah prediksi positif yang benar (TP + false positive (FP)). Precision memberikan informasi tentang seberapa banyak prediksi positif yang benar dari semua prediksi positif yang dibuat oleh model. Semakin tinggi nilai precision, semakin sedikit false positive, yang berarti model memberikan sedikit kesalahan dalam memprediksi item yang tidak seharusnya direkomendasikan.
 
 2. **Recall**: Recall (juga dikenal sebagai sensitivity atau true positive rate) mengukur seberapa baik model dalam menemukan semua contoh kelas positif yang seharusnya direkomendasikan. Recall dihitung sebagai rasio true positive (TP) dibagi dengan jumlah contoh kelas positif yang benar (TP + false negative (FN)). Recall memberikan informasi tentang seberapa banyak contoh kelas positif yang dapat ditemukan oleh model. Semakin tinggi nilai recall, semakin sedikit false negative, yang berarti model tidak melewatkan banyak contoh kelas positif yang seharusnya direkomendasikan.
 
-3. **F1-score**: F1-score adalah rata-rata harmonik antara precision dan recall. F1-score memberikan pengukuran keseimbangan antara precision dan recall. Hal ini berguna ketika kita ingin memperhatikan keseimbangan antara memaksimalkan presisi dan recall secara bersamaan. F1-score dihitung sebagai 2 * (precision * recall) / (precision + recall). F1-score memiliki rentang nilai antara 0 hingga 1, di mana nilai 1 menunjukkan kinerja yang sempurna dalam memprediksi kelas positif.
+3. **F1-score**: F1-score adalah rata-rata harmonik antara precision dan recall. F1-score memberikan pengukuran keseimbangan antara precision dan recall. Hal ini berguna ketika ingin memperhatikan keseimbangan antara memaksimalkan presisi dan recall secara bersamaan. F1-score dihitung sebagai 2 * (precision * recall) / (precision + recall). F1-score memiliki rentang nilai antara 0 hingga 1, di mana nilai 1 menunjukkan kinerja yang sempurna dalam memprediksi kelas positif.
 
 Ketiga metrik ini digunakan bersamaan untuk memberikan gambaran yang lebih lengkap tentang kinerja model. Precision dan recall dapat memberikan informasi yang berguna dalam konteks spesifik, tetapi F1-score menggabungkan kedua metrik ini menjadi satu angka yang mencerminkan kinerja secara keseluruhan.
 
-Pertama mari tentukan aktual item rekomendasinya, untuk menentukannya kita bisa melakukan uji atau tes pada hasil rekomendasi dengan cara membandingkan atribut-atribut dari hasil rekomendasi model dengan atribut input makanan yang ingin diberi rekomendasi, misalnya kita uji menggunakan nama makanan **roast turkey with cranberry sauce**. Kita lihat minimal dari 2 attribut awal memiliki kemiripan, misalnya **Healthy Food, nonveg, dan seterusnya**.
+Pertama mari tentukan aktual item rekomendasinya, untuk menentukannya bisa melakukan uji atau tes pada hasil rekomendasi dengan cara membandingkan atribut-atribut dari hasil rekomendasi model dengan atribut input makanan yang ingin diberi rekomendasi, misalnya melakukan uji menggunakan nama makanan **roast turkey with cranberry sauce**. Amati minimal dari 2 attribut awal memiliki kemiripan, misalnya **Healthy Food, nonveg, dan seterusnya**.
 
 Berikut ini hasil dari pengujian hasil rekomendasi _cosine similiarity_:
 
-Tabel 9. Pengujian hasil rekomendasi cosine similiarity
+Tabel 10. Pengujian hasil rekomendasi cosine similiarity
 
 |index|id|food\_name|food\_description|actual\_item|
 |---|---|---|---|---|
@@ -315,7 +337,7 @@ Dari hasil pengujian 5 rekomendasi, terdapat 4 data yang sesuai dan 1 data yang 
 
 Berikut ini hasil dari pengujian hasil rekomendasi _jaccard similiarity_:
 
-Tabel 10. Pengujian hasil rekomendasi jaccard similiarity
+Tabel 11. Pengujian hasil rekomendasi jaccard similiarity
 
 |index|id|food\_name|food\_description|actual\_item|
 |---|---|---|---|---|
@@ -327,11 +349,11 @@ Tabel 10. Pengujian hasil rekomendasi jaccard similiarity
 
 Dari hasil pengujian 5 rekomendasi, terdapat 3 data yang sesuai dan 2 data yang kurang sesuai yaitu makanan **carrot ginger soup** dan **shepherds salad** yang mempunyai atribut Healthy Food, veg, dan seterusnya.
 
-Selanjutnya kita panggil fungsi precision, recall dan F1 score dengan input aktual item dan rekomendasi item, langkah pertama dalam program adalah menyimpan nilai item aktual dari data evaluasi dalam variabel `actual_items_cosine` dan `actual_items_jaccard`. Kemudian, variabel `cosine_recommend_items` dan `jaccard_recommend_items` digunakan untuk menyimpan item rekomendasi yang dihasilkan oleh model menggunakan metode cosine similarity dan jaccard similarity.
+Selanjutnya coba panggil fungsi precision, recall dan F1 score dengan input aktual item dan rekomendasi item, langkah pertama dalam program adalah menyimpan nilai item aktual dari data evaluasi dalam variabel `actual_items_cosine` dan `actual_items_jaccard`. Kemudian, variabel `cosine_recommend_items` dan `jaccard_recommend_items` digunakan untuk menyimpan item rekomendasi yang dihasilkan oleh model menggunakan metode cosine similarity dan jaccard similarity.
 
 Selanjutnya, program membuat DataFrame kosong `eval_df` yang akan digunakan untuk menyimpan hasil evaluasi model, seperti precision, recall, dan F1-score. Kemudian, program menghitung precision, recall, dan F1-score untuk metode cosine similarity dan jaccard similarity menggunakan fungsi `precision`, `recall`, dan `f1_score`. Hasil evaluasi ini disimpan dalam dictionary `cosine_dict` dan `jaccard_dict`. Terakhir, program mengisi nilai-nilai evaluasi ke dalam DataFrame `eval_df` menggunakan loop dan menghasilkan tabel yang berisi evaluasi model untuk kedua metode similiarity tersebut.
 
-Tabel 11. Hasil metrik evaluasi precision, recall dan F1 score
+Tabel 12. Hasil metrik evaluasi precision, recall dan F1 score
 
 |index|Cosine Similiarity|Jaccard Similiarity|
 |---|---|---|
@@ -343,7 +365,7 @@ Dapat dilihat bahwa hasil Cosine Similiarity lebih baik dibandingkan Jaccard Sim
 
 ## Kesimpulan
 
-Dalam penelitian ini, telah dikembangkan sebuah sistem rekomendasi makanan menggunakan metode cosine similarity dan jaccard similarity. Sistem ini bertujuan untuk memberikan rekomendasi makanan yang sesuai dengan preferensi pengguna berdasarkan kesamaan konten. Hasil evaluasi model menunjukkan bahwa kedua metode similiarity, yaitu cosine similarity dan jaccard similarity, memberikan performa yang baik dalam memberikan rekomendasi makanan. Precision, recall, dan F1-score yang dihitung pada kedua metode tersebut memberikan indikasi yang positif tentang keakuratan dan kebermanfaatan rekomendasi yang diberikan.
+Dalam penelitian ini, telah dikembangkan sebuah sistem rekomendasi makanan menggunakan metode cosine similarity dan jaccard similarity. Sistem ini bertujuan untuk memberikan rekomendasi makanan yang sesuai dengan preferensi pengguna berdasarkan kesamaan konten. Hasil evaluasi model menunjukkan bahwa kedua metode similiarity, yaitu cosine similarity dan jaccard similarity, memberikan performa yang baik dalam memberikan rekomendasi makanan. Precision, recall, dan F1-score yang dihitung pada kedua metode tersebut memberikan indikasi yang positif tentang keakuratan dan kebermanfaatan rekomendasi yang diberikan. Hasil metrik evaluasi precision, recall, dan F1-score pada cosine similiarity masing-masing sebesar 0.8, sedangkan menggunakan jaccard similiarity masing-masing sebesar 0.6, sehingga dapat disimpulkan bahwa menggunakan pendekatan cosine similiarity lebih baik untuk sistem rekomendasi makanan ini.
 
 Melalui penggunaan CountVectorizer untuk menganalisis kesamaan konten, sistem rekomendasi ini dapat mengidentifikasi makanan yang memiliki kemiripan dalam deskripsi dan fitur seperti jenis makanan, bahan-bahan, dan asal masakan. Hal ini memungkinkan pengguna untuk menemukan makanan baru yang sesuai dengan preferensi mereka dan mencoba variasi masakan. Dengan demikian, sistem rekomendasi makanan ini dapat membantu pengguna dalam menemukan makanan yang sesuai dengan preferensi mereka, memberikan pengalaman kuliner yang lebih kaya, dan memperluas pengetahuan mereka tentang berbagai jenis masakan. Selain itu, sistem ini juga dapat membantu dalam mengurangi kebingungan dalam memilih makanan dan memberikan rekomendasi yang personalisasi sesuai dengan selera dan kebutuhan pengguna.
 
